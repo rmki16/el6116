@@ -6,10 +6,10 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>EL6116: Tugas 3</title>
+	<title>EL6116: Tugas 3 (NIM 23216001)</title>
 
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-	<h1>EL6116: Tugas 3</h1>
+	<h1>EL6116: Tugas 3 (NIM 23216001)</h1>
