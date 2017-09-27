@@ -1,0 +1,4 @@
+mysql> create user 'tugas3'@'10.10.10.50' identified by 'tugas3';
+mysql> grant all privileges on employees.* to 'tugas3'@'10.10.10.50';
+mysql> flush privileges;
+mysql> exit
