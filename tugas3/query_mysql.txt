@@ -1,0 +1,17 @@
+No ID | Nama Depan | Nama Belakang | Jabatan | Gaji
+create view gaji_pegawai_full as select employees.emp_no as "No ID", employees.first_name as "Nama Depan", employees.last_name as "Nama Belakang", titles.title as Jabatan, salaries.salary as Gaji from employees, titles, salaries where titles.emp_no = employees.emp_no and titles.emp_no = salaries.emp_no and salaries.to_date = "9999-01-01" and titles.to_date = "9999-01-01"
+
+Manajer Departemen | No ID | Nama Depan | Nama Belakang | Gaji
+create view gaji_manajer_full as select departments.dept_name as "Departemen", dept_manager.emp_no as "No ID", employees.first_name as "Nama Depan", employees.last_name as "Nama Belakang", salaries.salary as "Gaji" from departments, dept_manager, employees, salaries where dept_manager.emp_no = employees.emp_no and dept_manager.emp_no = salaries.emp_no and departments.dept_no = dept_manager.dept_no and dept_manager.to_date = "9999-01-01" and salaries.to_date = "9999-01-01"
+
+Nama Depan | Nama Belakang | Jabatan
+create view daftar_pegawai as select employees.first_name as "Nama Depan", employees.last_name as "Nama Belakang", titles.title as Jabatan from employees, titles where employees.emp_no = titles.emp_no and titles.to_date = "9999-01-01"
+
+Manajer Departemen | Nama Depan | Nama Belakang
+create view daftar_manajer as select departments.dept_name as "Departemen", employees.first_name as "Nama Depan", employees.last_name as "Nama Belakang" from departments, employees, dept_manager where dept_manager.emp_no = employees.emp_no and departments.dept_no = dept_manager.dept_no and dept_manager.to_date = "9999-01-01"
+
+Jabatan | Gaji
+create view gaji_pegawai as select titles.title as Jabatan, salaries.salary as Gaji from titles, salaries where titles.emp_no = salaries.emp_no and salaries.to_date = "9999-01-01" and titles.to_date = "9999-01-01"
+
+Manajer Departemen | Gaji
+create view gaji_manajer as select departments.dept_name as "Departemen", salaries.salary as "Gaji" from departments, salaries, dept_manager where dept_manager.emp_no = salaries.emp_no and departments.dept_no = dept_manager.dept_no and dept_manager.to_date = "9999-01-01" and salaries.to_date = "9999-01-01"
