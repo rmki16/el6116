@@ -5,6 +5,7 @@
     require "config.php";
     require "common.php";
 
+    // create connection
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT * FROM daftar_manajer";
@@ -33,8 +34,8 @@
         </tr>
       </thead>
       <tbody>
-    <?php
-      foreach ($resutl as $row)
+      <?php
+      foreach ($result as $row)
       { ?>
         <tr>
           <td><?php echo escape ($row["Departemen"]); ?></td>
@@ -43,5 +44,8 @@
         </tr>
       <?php
       } ?>
+      </tbody>
+    </table>
+
   }
    ?>
